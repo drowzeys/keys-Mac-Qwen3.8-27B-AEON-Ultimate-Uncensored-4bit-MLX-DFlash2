@@ -1,0 +1,281 @@
+{
+ "note": "Reconstructed harness (see docstring). thinking=false temp=0. decode=post-TTFT.",
+ "url": "http://127.0.0.1:8080",
+ "model": "qwen38-27b-aeon-tf",
+ "conc": 4,
+ "c1": {
+  "structural": {
+   "decode_tok_s": [
+    228.93,
+    227.98,
+    209.87
+   ],
+   "wall_tok_s": [
+    217.79,
+    217.03,
+    200.57
+   ],
+   "completion_tokens": [
+    512,
+    512,
+    512
+   ],
+   "ttft_ms": [
+    119,
+    118,
+    118
+   ],
+   "median_decode": 227.98,
+   "best_decode": 228.93,
+   "median_wall": 217.03,
+   "preview": "[{\"host\":\"gpu-node-01\",\"gpuIndex\":0,\"utilPct\":85,\"tempC\":62,\"powerW\":210,\"memUsedMb\":12048},{\"host\":\"gpu-node-01\",\"gpuIndex\":1,\"utilPct\":78,",
+   "finish": [
+    "length",
+    "length",
+    "length"
+   ],
+   "role": "primary"
+  },
+  "list": {
+   "decode_tok_s": [
+    179.41,
+    189.16,
+    188.37
+   ],
+   "wall_tok_s": [
+    169.35,
+    177.8,
+    177.27
+   ],
+   "completion_tokens": [
+    190,
+    190,
+    190
+   ],
+   "ttft_ms": [
+    68,
+    69,
+    69
+   ],
+   "median_decode": 188.37,
+   "best_decode": 189.16,
+   "median_wall": 177.27,
+   "preview": "1. the 2. be 3. to 4. of 5. and 6. a 7. in 8. have 9. i 10. it 11. for 12. on 13. with 14. he 15. as 16. you 17. do 18. at 19. this 20. that",
+   "finish": [
+    "length",
+    "length",
+    "length"
+   ],
+   "role": "primary"
+  },
+  "essay": {
+   "decode_tok_s": [
+    102.78,
+    104.03,
+    101.79
+   ],
+   "wall_tok_s": [
+    100.68,
+    101.87,
+    99.73
+   ],
+   "completion_tokens": [
+    320,
+    320,
+    320
+   ],
+   "ttft_ms": [
+    75,
+    75,
+    75
+   ],
+   "median_decode": 102.78,
+   "best_decode": 104.03,
+   "median_wall": 100.68,
+   "preview": "Public parks serve as the green lungs of the city, functioning not merely as recreational spaces but as vital social, ecological, and psycho",
+   "finish": [
+    "length",
+    "length",
+    "length"
+   ],
+   "role": "primary"
+  },
+  "reading": {
+   "decode_tok_s": [
+    115.79,
+    112.27,
+    114.25
+   ],
+   "wall_tok_s": [
+    84.03,
+    81.94,
+    82.93
+   ],
+   "completion_tokens": [
+    167,
+    165,
+    165
+   ],
+   "ttft_ms": [
+    554,
+    553,
+    554
+   ],
+   "median_decode": 114.25,
+   "best_decode": 115.79,
+   "median_wall": 82.93,
+   "preview": "Multi-agent systems frequently utilize a common system prompt to establish shared behaviors, tools, and context for all participating agents",
+   "finish": [
+    "stop",
+    "stop",
+    "stop"
+   ],
+   "role": "primary"
+  },
+  "count": {
+   "decode_tok_s": [
+    342.53,
+    378.72,
+    379.35
+   ],
+   "wall_tok_s": [
+    279.89,
+    303.6,
+    303.96
+   ],
+   "completion_tokens": [
+    110,
+    110,
+    110
+   ],
+   "ttft_ms": [
+    75,
+    75,
+    75
+   ],
+   "median_decode": 378.72,
+   "best_decode": 379.35,
+   "median_wall": 303.6,
+   "preview": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40",
+   "finish": [
+    "length",
+    "length",
+    "length"
+   ],
+   "role": "diagnostic"
+  }
+ },
+ "c4": {
+  "structural": {
+   "samples": [
+    {
+     "aggregate_tok_s": 399.2,
+     "median_stream_decode": 109.485,
+     "total_tok": 2048,
+     "wall_s": 5.13,
+     "median_ttft_ms": 329.5
+    },
+    {
+     "aggregate_tok_s": 399.1,
+     "median_stream_decode": 113.435,
+     "total_tok": 2048,
+     "wall_s": 5.13,
+     "median_ttft_ms": 333.0
+    }
+   ],
+   "median_aggregate": 399.15,
+   "best_aggregate": 399.2,
+   "median_stream_decode": 111.46000000000001,
+   "role": "primary"
+  },
+  "list": {
+   "samples": [
+    {
+     "aggregate_tok_s": 362.5,
+     "median_stream_decode": 106.95,
+     "total_tok": 760,
+     "wall_s": 2.1,
+     "median_ttft_ms": 197.0
+    },
+    {
+     "aggregate_tok_s": 387.6,
+     "median_stream_decode": 110.985,
+     "total_tok": 760,
+     "wall_s": 1.96,
+     "median_ttft_ms": 197.0
+    }
+   ],
+   "median_aggregate": 375.05,
+   "best_aggregate": 387.6,
+   "median_stream_decode": 108.9675,
+   "role": "primary"
+  },
+  "essay": {
+   "samples": [
+    {
+     "aggregate_tok_s": 257.9,
+     "median_stream_decode": 68.83,
+     "total_tok": 1280,
+     "wall_s": 4.96,
+     "median_ttft_ms": 205.5
+    },
+    {
+     "aggregate_tok_s": 251.4,
+     "median_stream_decode": 69.275,
+     "total_tok": 1280,
+     "wall_s": 5.09,
+     "median_ttft_ms": 207.5
+    }
+   ],
+   "median_aggregate": 254.64999999999998,
+   "best_aggregate": 257.9,
+   "median_stream_decode": 69.05250000000001,
+   "role": "primary"
+  },
+  "reading": {
+   "samples": [
+    {
+     "aggregate_tok_s": 137.5,
+     "median_stream_decode": 55.03,
+     "total_tok": 666,
+     "wall_s": 4.84,
+     "median_ttft_ms": 1597.5
+    },
+    {
+     "aggregate_tok_s": 137.8,
+     "median_stream_decode": 54.41,
+     "total_tok": 674,
+     "wall_s": 4.89,
+     "median_ttft_ms": 1619.0
+    }
+   ],
+   "median_aggregate": 137.65,
+   "best_aggregate": 137.8,
+   "median_stream_decode": 54.72,
+   "role": "primary"
+  },
+  "count": {
+   "samples": [
+    {
+     "aggregate_tok_s": 470.2,
+     "median_stream_decode": 156.31,
+     "total_tok": 440,
+     "wall_s": 0.94,
+     "median_ttft_ms": 212.0
+    },
+    {
+     "aggregate_tok_s": 451.9,
+     "median_stream_decode": 155.83499999999998,
+     "total_tok": 440,
+     "wall_s": 0.97,
+     "median_ttft_ms": 211.0
+    }
+   ],
+   "median_aggregate": 461.04999999999995,
+   "best_aggregate": 470.2,
+   "median_stream_decode": 156.0725,
+   "role": "diagnostic"
+  }
+ },
+ "ts": 1790816908.548192
+}
