@@ -2,7 +2,7 @@
 # container. It carries the pinned engine wheel, the exact dependency lock and the recipe scripts;
 # oneshot-setup.sh copies them out and installs natively on the Mac.
 #
-#   docker run --rm -v "$PWD":/out ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon:0.6.0 cp -a /payload/. /out/
+#   docker run --rm -v "$PWD":/out ghcr.io/drowzeys/keys-mac-qwen38-27b-aeon:0.6.0 cp -a /payload/. /out/
 FROM busybox:1.37
 LABEL org.opencontainers.image.source="https://github.com/drowzeys/keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2"
 LABEL org.opencontainers.image.description="Carrier (not a runtime): inference engine 0.6.0 @ c4646171 wheel + dependency lock + recipe for Qwen3.8-27B AEON Ultimate Uncensored 4-bit MLX on Apple Silicon"

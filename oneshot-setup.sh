@@ -13,7 +13,7 @@ set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PREFIX="${PREFIX:-$HOME/.local/opt/tensorfold-aeon}"
 PORT="${PORT:-8080}"
-IMAGE="${IMAGE:-ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon:0.6.0}"
+IMAGE="${IMAGE:-ghcr.io/drowzeys/keys-mac-qwen38-27b-aeon:0.6.0}"
 TF_COMMIT="c4646171139ee8a3c38103eaa1699dad226ec12b"
 MODEL="choppedgarlic/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-4bit-MLX"
 DRAFTER="z-lab/Qwen3.8-27B-DFlash2"

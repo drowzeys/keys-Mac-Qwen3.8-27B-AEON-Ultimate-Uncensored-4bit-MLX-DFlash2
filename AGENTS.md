@@ -1,7 +1,7 @@
 # Agent one-shot — Qwen3.8-27B AEON Ultimate Uncensored (4-bit MLX)
 
 **Repo:** https://github.com/drowzeys/keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2  
-**Carrier image:** `ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon:0.6.0` (not a runtime; engine wheel + lock)  
+**Carrier image:** `ghcr.io/drowzeys/keys-mac-qwen38-27b-aeon:0.6.0` (not a runtime; engine wheel + lock)  
 **Engine:** engine 0.6.0 @ `c4646171`, own venv, MLX lane kernels + DFlash2
 
 ```bash

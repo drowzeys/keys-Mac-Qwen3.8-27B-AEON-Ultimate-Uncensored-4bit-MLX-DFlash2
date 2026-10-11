@@ -4,7 +4,7 @@
 #   PUSH=1 bash scripts/build-carrier.sh    # build + push (needs `docker login ghcr.io` with write:packages)
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-IMAGE="${IMAGE:-ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon}"
+IMAGE="${IMAGE:-ghcr.io/drowzeys/keys-mac-qwen38-27b-aeon}"
 TAG="${TAG:-0.6.0}"
 TF_COMMIT="c4646171139ee8a3c38103eaa1699dad226ec12b"
 cd "$HERE"

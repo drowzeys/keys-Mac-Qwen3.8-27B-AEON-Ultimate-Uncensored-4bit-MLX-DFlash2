@@ -119,9 +119,9 @@ Verified end to end from fresh prefixes on the M5 Ultra by both routes: GHCR car
 ### GHCR prebuilt carrier
 
 ```bash
-docker pull ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon:0.6.0
+docker pull ghcr.io/drowzeys/keys-mac-qwen38-27b-aeon:0.6.0
 # index digest sha256:97228fdec198a63210f65e19d848fc6a90e318aecb20b25a4c48947e9bce3bc0 (linux/arm64 + linux/amd64)
-docker run --rm -v "$PWD":/out ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon:0.6.0 cp -a /payload/. /out/payload/
+docker run --rm -v "$PWD":/out ghcr.io/drowzeys/keys-mac-qwen38-27b-aeon:0.6.0 cp -a /payload/. /out/payload/
 ```
 
 The carrier holds the engine wheel, `requirements.lock` and `SHA256SUMS`. **It is not a Mac runtime**:
