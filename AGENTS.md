@@ -1,12 +1,12 @@
 # Agent one-shot — Qwen3.8-27B AEON Ultimate Uncensored (4-bit MLX) on TensorFold
 
-**Repo:** https://github.com/drowzeys/keys-Mac-TensorFold-0.6.0-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2  
+**Repo:** https://github.com/drowzeys/keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2  
 **Carrier image:** `ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon:0.6.0` (not a runtime; TensorFold wheel + lock)  
 **Engine:** TensorFold 0.6.0 @ `c4646171`, own venv, MLX lane kernels + DFlash2
 
 ```bash
-git clone https://github.com/drowzeys/keys-Mac-TensorFold-0.6.0-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2.git
-cd keys-Mac-TensorFold-0.6.0-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2
+git clone https://github.com/drowzeys/keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2.git
+cd keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2
 brew install python@3.11 uv
 bash oneshot-setup.sh      # engine (GHCR carrier or git), weights 15.2 GB + drafter 3.8 GB, serve :8080
 ```

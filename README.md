@@ -1,4 +1,4 @@
-# keys-Mac-TensorFold-0.6.0-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2
+# keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2
 
 **1.0** · Mac Studio M5 Ultra 256 GB · [TensorFold](https://github.com/ashhart/TensorFold) **0.6.0** ·
 **Qwen3.8-27B AEON Ultimate Uncensored** (AEON-7) as **4-bit MLX** (choppedgarlic) · **DFlash2** speculative
@@ -97,8 +97,8 @@ Raw: [`bench/results/`](bench/results/) and [`bench/results/llmprobe/`](bench/re
 ## One-shot
 
 ```bash
-git clone https://github.com/drowzeys/keys-Mac-TensorFold-0.6.0-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2.git
-cd keys-Mac-TensorFold-0.6.0-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2
+git clone https://github.com/drowzeys/keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2.git
+cd keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2
 brew install python@3.11 uv
 bash oneshot-setup.sh
 ```
