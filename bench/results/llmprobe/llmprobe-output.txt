@@ -1,5 +1,5 @@
 npm notice run npx
-npm notice run 'llmprobe' 127.0.0.1:8080 -m qwen38-27b-aeon-tf --bench-only --rungs 2k,4k,8k,16k,32k,64k,128k,250k --concurrency 4 --label Qwen3.8-27B AEON Ultimate Uncensored 4bit MLX | TensorFold 0.6.0 c4646171 lane kernels + DFlash2 | M5 Ultra 256GB --no-color
+npm notice run 'llmprobe' 127.0.0.1:8080 -m qwen38-27b-aeon-tf --bench-only --rungs 2k,4k,8k,16k,32k,64k,128k,250k --concurrency 4 --label Qwen3.8-27B AEON Ultimate Uncensored 4bit MLX | engine 0.6.0 c4646171 lane kernels + DFlash2 | M5 Ultra 256GB --no-color
 llmprobe v0.6.13 · probing http://127.0.0.1:8080
 
   ✓ /v1/models               HTTP 200
@@ -98,7 +98,7 @@ library 6 models → ~/.llmprobe
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  llmprobe · http://127.0.0.1:8080/v1 · BaseHTTP · qwen38-27b-aeon-tf
- label Qwen3.8-27B AEON Ultimate Uncensored 4bit MLX | TensorFold 0.6.0 c4646171 lane kernels + DFlash2 | M5 Ultra 256GB
+ label Qwen3.8-27B AEON Ultimate Uncensored 4bit MLX | engine 0.6.0 c4646171 lane kernels + DFlash2 | M5 Ultra 256GB
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 PERFORMANCE

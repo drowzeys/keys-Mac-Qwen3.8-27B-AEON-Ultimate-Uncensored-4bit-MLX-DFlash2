@@ -1,5 +1,5 @@
 #!/bin/bash
-# Start (or restart) TensorFold for this recipe and confirm the fast path engaged.
+# Start (or restart) the engine for this recipe and confirm the fast path engaged.
 # Log: $PREFIX/serve.out
 set -euo pipefail
 PREFIX="${PREFIX:-$HOME/.local/opt/tensorfold-aeon}"

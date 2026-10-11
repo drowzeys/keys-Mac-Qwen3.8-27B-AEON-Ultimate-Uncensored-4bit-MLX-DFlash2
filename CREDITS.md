@@ -29,17 +29,18 @@ AEON's own credits for the abliteration, carried here in full:
 serves. Per their card, all model and fine-tuning credit belongs to AEON-7 and the Qwen team; their
 repository provides the conversion only.
 
-## The engine: Ash Hart
+## Third-party software notice: the inference engine
 
-**Ash Hart** (ashhart) — **TensorFold**: exact speculative decoding on Apple Silicon, the M5 tensor-unit
-lane kernels, draft trees, shared rounds across concurrent requests, and prefix reuse. Every speed number
-in this repo is TensorFold's engineering. Recipe pins TensorFold 0.6.0 at commit `c4646171`
-(Apache-2.0).
+This recipe installs, and its carrier image redistributes unmodified, the following third-party software:
+TensorFold 0.6.0 at commit `c4646171139ee8a3c38103eaa1699dad226ec12b`, by Ash Hart (ashhart), licensed
+under Apache-2.0. It provides the serving path used here: exact speculative decoding on Apple Silicon, the
+M5 tensor-unit lane kernels, draft trees, shared rounds across concurrent requests, and prefix reuse.
+The TensorFold project is not affiliated with this repository and does not endorse or test this model.
 
 ## The drafter: z-lab
 
 **z-lab** (DFlash) — the `z-lab/Qwen3.8-27B-DFlash2` block-diffusion draft model (Apache-2.0) that
-TensorFold verifies against the target. It was trained on stock Qwen3.8-27B and still drafts well for
+the engine verifies against the target. It was trained on stock Qwen3.8-27B and still drafts well for
 AEON.
 
 ## Platform and tools

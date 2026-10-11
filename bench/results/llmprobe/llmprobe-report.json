@@ -3,7 +3,7 @@
   "run": {
     "depth": "default",
     "mode": "bench-only",
-    "label": "Qwen3.8-27B AEON Ultimate Uncensored 4bit MLX | TensorFold 0.6.0 c4646171 lane kernels + DFlash2 | M5 Ultra 256GB",
+    "label": "Qwen3.8-27B AEON Ultimate Uncensored 4bit MLX | engine 0.6.0 c4646171 lane kernels + DFlash2 | M5 Ultra 256GB",
     "startedAt": "2026-10-01T01:20:24.054Z",
     "phases": {
       "coverage": {

@@ -1,6 +1,6 @@
 # keys-Mac-Qwen3.8-27B-AEON-Ultimate-Uncensored-4bit-MLX-DFlash2
 
-**1.0** · Mac Studio M5 Ultra 256 GB · [TensorFold](https://github.com/ashhart/TensorFold) **0.6.0** ·
+**1.0** · Mac Studio M5 Ultra 256 GB · inference engine **0.6.0** @ `c4646171` ·
 **Qwen3.8-27B AEON Ultimate Uncensored** (AEON-7) as **4-bit MLX** (choppedgarlic) · **DFlash2** speculative
 decoding (z-lab) · M5 tensor-unit lane kernels
 
@@ -11,7 +11,7 @@ One-shot install from a GHCR prebuilt carrier.
 This model has had safety refusals removed. Read [RESPONSIBLE_USE.md](RESPONSIBLE_USE.md) first.
 
 **All credit to the authors:** AEON-7 / SpaceTimeViking (the model), choppedgarlic (the 4-bit MLX
-conversion), Ash Hart (TensorFold) and z-lab (DFlash2). See [CREDITS.md](CREDITS.md).
+conversion) and z-lab (DFlash2). See [CREDITS.md](CREDITS.md).
 
 ## Headline (measured 2026-09-30, Mac Studio M5 Ultra 256 GB)
 
@@ -82,13 +82,13 @@ Raw: [`bench/results/`](bench/results/) and [`bench/results/llmprobe/`](bench/re
 
 | | structural | list | essay | reading | count | 4 concurrent total (structural) | TTFT |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| **AEON 4-bit MLX on TensorFold (this recipe)** | **228.0** | **188.4** | **102.8** | **114.3** | **378.7** | **399.2** | **~75 ms** |
-| Huihui ablit oQ4e on TensorFold | 217.7 | 203.7 | 100.4 | 127.7 | 324.4 | 394.9 | ~75 ms |
-| Stock Vontra 4-bit on TensorFold | 226.5 | 163.9 | 99.1 | 128.3 | 380.5 | 355.4 | ~75 ms |
+| **AEON 4-bit MLX on this engine (this recipe)** | **228.0** | **188.4** | **102.8** | **114.3** | **378.7** | **399.2** | **~75 ms** |
+| Huihui ablit oQ4e on this engine | 217.7 | 203.7 | 100.4 | 127.7 | 324.4 | 394.9 | ~75 ms |
+| Stock Vontra 4-bit on this engine | 226.5 | 163.9 | 99.1 | 128.3 | 380.5 | 355.4 | ~75 ms |
 | Huihui ablit oQ4e on oMLX 0.6.3rc2 (keys-Mac Dual-ANE pack) | 124.1 | 133.4 | 82.3 | 103.8 | 135.8 | 125.9 | ~360 ms |
 | Same, M3 Ultra (pack's published numbers) | 69.1 | 77.6 | 49.6 | 49.1 | 79.1 | 79.7 | ~550 ms |
 
-- **The engine matters far more than the build.** Without drafting, TensorFold decodes at ~37.7 tok/s on every
+- **The engine matters far more than the build.** Without drafting, the engine decodes at ~37.7 tok/s on every
   task (`--no-drafts`). DFlash2 plus context-copy drafting gives the 2.7× (prose) to 8.6× (counting) on top,
   because the M5 lane kernels verify a 16-row draft window in 26.7 ms against 24.2 ms for one row.
 - DFlash2 was trained on stock Qwen3.8-27B and still drafts as well for AEON's abliterated weights.
@@ -105,7 +105,7 @@ bash oneshot-setup.sh
 
 `oneshot-setup.sh` does the following:
 
-1. Gets TensorFold 0.6.0 at commit `c4646171`, from the **GHCR prebuilt carrier** when Docker is available
+1. Gets the inference engine 0.6.0 at commit `c4646171`, from the **GHCR prebuilt carrier** when Docker is available
    (checksums verified), otherwise from git at the same commit.
 2. Installs it with the exact dependency lock ([`requirements.lock`](requirements.lock): mlx 0.32.3, mlx-lm
    0.31.3, transformers 5.18.0, …) into its own venv at `~/.local/opt/tensorfold-aeon`.
@@ -124,7 +124,7 @@ docker pull ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon:0.6.0
 docker run --rm -v "$PWD":/out ghcr.io/drowzeys/keys-mac-tensorfold-qwen38-27b-aeon:0.6.0 cp -a /payload/. /out/payload/
 ```
 
-The carrier holds the TensorFold wheel, `requirements.lock` and `SHA256SUMS`. **It is not a Mac runtime**:
+The carrier holds the engine wheel, `requirements.lock` and `SHA256SUMS`. **It is not a Mac runtime**:
 Metal does not run in a container, so `oneshot-setup.sh` installs the payload natively. Rebuild it with
 `PUSH=1 bash scripts/build-carrier.sh`.
 
@@ -146,31 +146,31 @@ top_p 0.95).
 | Piece | Value |
 |---|---|
 | Host | Mac Studio M5 Ultra (Mac17,15), 256 GB, macOS 27.0.1 |
-| Engine | TensorFold 0.6.0 @ `c4646171139ee8a3c38103eaa1699dad226ec12b` (Apache-2.0), MLX lane engine |
+| Engine | engine 0.6.0 @ `c4646171139ee8a3c38103eaa1699dad226ec12b` (Apache-2.0, notice in [CREDITS.md](CREDITS.md)), MLX lane engine |
 | Model | `choppedgarlic/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-4bit-MLX` @ `875c8523` — 4-bit affine, groups of 64, 15.2 GB |
 | Source | `AEON-7/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-BF16` @ `449fcbf9` (Apache-2.0) |
 | Drafter | `z-lab/Qwen3.8-27B-DFlash2` @ `50307d4c` (Apache-2.0), block 8, 4-bit |
 | Resident | 18.3 GiB, loaded in ~14 s |
 | Context | 262,144 tokens (model maximum) |
-| Concurrency | up to 8 requests share a round (TensorFold default) |
+| Concurrency | up to 8 requests share a round (engine default) |
 
 ## Notes
 
-- **TensorFold has not tested this checkpoint.** At pull time it prints that `choppedgarlic/...-4bit-MLX` is
+- **The engine's authors have not tested this checkpoint.** At pull time the engine prints that `choppedgarlic/...-4bit-MLX` is
   not one of its tested checkpoints: "replies stay exact to serial decoding, speed and quality are unmeasured".
   The speed is measured here. Quality of the 4-bit conversion is not.
 - **Refusal behavior of this 4-bit conversion is not measured.** AEON-7 publishes its own evaluation of the
   BF16 master on its card. 4-bit quantization can shift an abliterated model's behavior.
-- **M5 only for these numbers.** M1–M4 run TensorFold's packed row decoder instead of the tensor-unit lane
+- **M5 only for these numbers.** M1–M4 run the engine's packed row decoder instead of the tensor-unit lane
   kernels.
-- **No NVFP4 / FP8 on a Mac.** AEON-7's NVFP4-MIXED cut and TensorFold's FP8 paths are CUDA-only (DGX Spark,
+- **No NVFP4 / FP8 on a Mac.** AEON-7's NVFP4-MIXED cut and the engine's FP8 paths are CUDA-only (DGX Spark,
   RTX 5090, RTX PRO 6000).
-- TensorFold's prefill drops past 64k (330 tok/s at 256k). oMLX 0.6.3rc2 measured 443 tok/s at 256k on the
-  same Mac, so for very long single prompts oMLX prefills faster. TensorFold decodes 2× faster there.
+- The engine's prefill drops past 64k (330 tok/s at 256k). oMLX 0.6.3rc2 measured 443 tok/s at 256k on the
+  same Mac, so for very long single prompts oMLX prefills faster. This engine decodes 2× faster there.
 
 ## Credits
 
 Cite the original authors first: AEON-7 / SpaceTimeViking (model, abliteration pipeline) and the work they credit
 (Qwen team, FernflowerAI, Wangzhang Wu's abliterix, Philipp Emanuel Weidmann's Heretic, Arditi et al., grimjim,
-Huang et al.), choppedgarlic (4-bit MLX conversion), Ash Hart (TensorFold), z-lab (DFlash2), Apple MLX. Full list:
+Huang et al.), choppedgarlic (4-bit MLX conversion), z-lab (DFlash2), Apple MLX. Full list:
 [CREDITS.md](CREDITS.md). Pack: drowzeys / keys.

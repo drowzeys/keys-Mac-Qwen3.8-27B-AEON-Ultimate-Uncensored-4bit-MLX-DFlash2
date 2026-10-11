@@ -27,7 +27,7 @@ distributing the model means you accept them.
 ## Your responsibility
 
 Add your own safety filtering, human review and access controls before exposing this model to anyone
-else. TensorFold binds to `127.0.0.1` in this recipe on purpose; do not put it on a network without them.
+else. The engine binds to `127.0.0.1` in this recipe on purpose; do not put it on a network without them.
 
 Refusal behavior of this 4-bit conversion has **not** been measured here. AEON-7 reports its own
 evaluation of the BF16 master on its card.

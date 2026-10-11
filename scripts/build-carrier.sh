@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build and push the GHCR carrier image (TensorFold wheel at the pinned commit + dependency lock).
+# Build and push the GHCR carrier image (engine wheel at the pinned commit + dependency lock).
 #   bash scripts/build-carrier.sh           # build only
 #   PUSH=1 bash scripts/build-carrier.sh    # build + push (needs `docker login ghcr.io` with write:packages)
 set -euo pipefail
